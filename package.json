@@ -1,33 +1,128 @@
 {
     "name": "character-scanner",
-    "homepage": "https://github.com/khrome/character-scanner",
-    "version": "1.0.0",
-    "main": "character-scanner.js",
-    "description": "A Scanning Buffer for detecting and extracting character patterns",
-    "keywords": [
-        "character",
-        "scanner"
-    ],
-    "author": "Abbey Hawk Sparrow <@khrome> (http://patternweaver.com)",
-    "contributors": [],
-    "bugs": {
-        "url": "https://github.com/khrome/character-scanner/issues"
+    "version": "2.0.0",
+    "type": "module",
+    "main": "src/index.mjs",
+    "module": "src/index.mjs",
+    "commonjs": "src/index.cjs",
+    "exports": {
+        ".": {
+            "import": "./src/index.mjs",
+            "require": "./src/index.cjs"
+        },
+        "./package.json": {
+            "import": "./package.json",
+            "require": "./package.json"
+        },
+        "./src/index.mjs": {
+            "import": "./src/index.mjs",
+            "require": "./src/index.cjs"
+        },
+        "./src/index.mts": {
+            "import": "./src/index.mts",
+            "require": "./src/index.mts"
+        },
+        "./dist/index.cjs": {
+            "import": "./src/index.mjs",
+            "require": "./src/index.cjs"
+        }
     },
-    "license": "MIT",
+    "homepage": "https://github.com/khrome/character-scanner",
+    "description": "Scan character buffers for patterns and generate events in javascript",
+    "keywords": [],
+    "author": "Abbey Hawk Sparrow <khrome>(http://abbeyhawksparrow.com)",
+    "contributors": [],
     "repository": {
         "type": "git",
-        "url": "git://github.com/khrome/character-scanner.git"
+        "url": "https://github.com/khrome/character-scanner"
     },
-    "dependencies": {
-        "extended-emitter": "*"
+    "bugs": {
+        "url": "https://api.github.com/repos/khrome/character-scanner/issues"
+    },
+    "moka": {
+        "firefox": {
+            "engine": "@open-automaton/playwright-mining-engine",
+            "options": {
+                "type": "firefox"
+            }
+        },
+        "chrome": {
+            "engine": "@open-automaton/playwright-mining-engine",
+            "options": {
+                "type": "chromium"
+            }
+        },
+        "safari": {
+            "engine": "@open-automaton/playwright-mining-engine",
+            "options": {
+                "type": "webkit"
+            }
+        },
+        "stub": "node_modules/@open-automaton/moka/src/stub.mjs",
+        "stubs": [
+            "express",
+            "module",
+            "path"
+        ],
+        "shims": {
+            "chai": "node_modules/chai/chai.js",
+            "node:events": "node_modules/extended-emitter/node-events.mjs",
+            "browser-or-node": "node_modules/browser-or-node/src/index.js"
+        }
+    },
+    "license": "MIT",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint src/*.ts test/*.mts",
+        "ts": "ts-node src/index.ts",
+        "build-esmodule": "tsc -d src/index.ts --module nodenext; cd src; find . -depth -name '*.js' -exec sh -c 'f=\"{}\"; mv -- \"$f\" \"${f%.js}.mjs\"' \\;",
+        "build-commonjs": "tsc src/index.ts; cd src; find . -depth -name '*.js' -exec sh -c 'f=\"{}\"; mv -- \"$f\" \"${f%.js}.cjs\"' \\;",
+        "build-docs":"typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts",
+        "test": "npm run ts-test; npm run import-test; npm run browser-test; npm run require-test",
+        "build:test": "npm run ts-test; npm run build-esmodule; npm run import-test; npm run headless-browser-test; npm run build-commonjs; npm run require-test",
+        "ts-test": "cross-env NODE_OPTIONS=\"--loader=ts-node/esm --trace-warnings\" TS_NODE_PROJECT='./test/tsconfig.json' mocha --config=.mocharc.ts.json test/test.mts",
+        "ts-coverage": "cross-env NODE_OPTIONS=\"--loader=ts-node/esm --trace-warnings\" TS_NODE_PROJECT='./test/tsconfig.json' nyc mocha --config=.mocharc.ts.json test/test.mts",
+        "import-coverage": "nyc mocha test/test.mjs",
+        "import-test": "mocha test/test.mjs",
+        "require-coverage": "nyc mocha test/test.cjs",
+        "require-test": "mocha test/test.cjs",
+        "local-server": "open 'http://localhost:8085/' ; npx http-server -p 8085",
+        "headless-browser-test": "npm run headless-chrome-test; npm run headless-firefox-test; npm run headless-safari-test",
+        "headless-chrome-test": "moka --server . --browser chrome --relaxed --prefix ../ test/test.mjs",
+        "headless-firefox-test": "moka --server . --browser firefox --relaxed --prefix ../ test/test.mjs",
+        "headless-safari-test": "moka --server . --browser safari --relaxed --prefix ../ test/test.mjs",
+        "browser-test": "moka --server . --local-browser --relaxed --prefix ../ test/test.mjs",
+        "container-test": "docker build . -t environment-safe-package.json -f ./containers/test.dockerfile; docker logs --follow \"$(docker run -d environment-safe-package.json)\"",
+        "add-generated-files-to-commit": "git add docs/*.md; git add src/*.d.ts; git add src/*.cjs; git add src/*.mjs",
+        "prepare": "husky install"
     },
     "devDependencies": {
-        "mocha": "*",
-        "should": "*"
+        "@babel/cli": "^7.22.5",
+        "@babel/core": "^7.22.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+        "@environment-safe/chai": "^0.2.0",
+        "@environment-safe/jsdoc-builder": "^0.0.2",
+        "@istanbuljs/nyc-config-typescript": "^1.0.2",
+        "@open-automaton/moka": "^0.0.4",
+        "@types/chai": "^4.3.11",
+        "@types/mocha": "^10.0.6",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "babel-plugin-search-and-replace": "^1.1.1",
+        "babel-plugin-transform-import-meta": "^2.2.0",
+        "chai": "^4.3.10",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.55.0",
+        "husky": "^8.0.3",
+        "jsdom-global": "^3.0.2",
+        "mocha": "^10.2.0",
+        "nyc": "^15.1.0",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typedoc": "^0.25.4",
+        "typedoc-plugin-markdown": "^3.17.1",
+        "typescript": "^5.3.3"
     },
-    "optionalDependencies": {
-    },
-    "engines": {
-        "node": "*"
+    "dependencies": {
+        "extended-emitter": "^1.6.0"
     }
 }
