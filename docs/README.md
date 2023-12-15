@@ -14,6 +14,8 @@ This is a scanner for scanning streams of characters (like you get from keyboard
 Usage
 -----
 
+Character scanner supports buildless execution in all supported environments.
+
 require the library
     
 ```javascript

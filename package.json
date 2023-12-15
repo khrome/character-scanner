@@ -1,10 +1,11 @@
 {
     "name": "character-scanner",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "type": "module",
     "main": "src/index.mjs",
     "module": "src/index.mjs",
     "commonjs": "src/index.cjs",
+    "types":"src/index.d.ts",
     "exports": {
         ".": {
             "import": "./src/index.mjs",
@@ -92,7 +93,7 @@
         "headless-safari-test": "moka --server . --browser safari --relaxed --prefix ../ test/test.mjs",
         "browser-test": "moka --server . --local-browser --relaxed --prefix ../ test/test.mjs",
         "container-test": "docker build . -t environment-safe-package.json -f ./containers/test.dockerfile; docker logs --follow \"$(docker run -d environment-safe-package.json)\"",
-        "add-generated-files-to-commit": "git add docs/*.md; git add src/*.d.ts; git add src/*.cjs; git add src/*.mjs",
+        "add-generated-files-to-commit": "git add docs/**/*.md; git add src/**/*.d.ts; git add src/**/*.cjs; git add src/**/*.mjs",
         "prepare": "husky install"
     },
     "devDependencies": {

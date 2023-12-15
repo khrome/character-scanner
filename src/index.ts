@@ -101,8 +101,8 @@ export class CharacterScanner{
     
     scan(scanners?: ScannerOptionsList):void{
         let terminated = false;
-        const now = Date.now();
-        const scannerList = (scanners || this.allScanners());
+        const now:number = Date.now();
+        const scannerList: ScannerOptionsList = (scanners || this.allScanners());
         for(let lcv=0; lcv < scannerList.length; lcv++){
             const scanner: ScannerOptions = scannerList[lcv];
             const interval = (scanner.interval || 0);
@@ -128,7 +128,7 @@ export class CharacterScanner{
         }
     }
     
-    input(value: string){
+    input(value: string):void{
         const now = Date.now();
         const largest = this.largestInterval;
         this.buffer = this.buffer.filter(function(item){

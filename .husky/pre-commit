@@ -6,4 +6,4 @@ npm run headless-browser-test
 npm run build-commonjs
 npm run require-test
 npm run build-docs
-npm run add-generated-files-to-commit
+#npm run add-generated-files-to-commit

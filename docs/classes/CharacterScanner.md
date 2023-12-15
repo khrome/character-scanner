@@ -47,7 +47,7 @@
 
 #### Defined in
 
-[index.ts:59](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L59)
+[index.ts:59](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L59)
 
 ## Properties
 
@@ -57,7 +57,7 @@
 
 #### Defined in
 
-[index.ts:35](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L35)
+[index.ts:35](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L35)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[index.ts:57](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L57)
+[index.ts:57](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L57)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[index.ts:39](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L39)
+[index.ts:39](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L39)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[index.ts:36](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L36)
+[index.ts:36](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L36)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 #### Defined in
 
-[index.ts:52](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L52)
+[index.ts:52](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L52)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[index.ts:40](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L40)
+[index.ts:40](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L40)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[index.ts:46](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L46)
+[index.ts:46](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L46)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[index.ts:34](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L34)
+[index.ts:34](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L34)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[index.ts:38](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L38)
+[index.ts:38](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L38)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[index.ts:37](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L37)
+[index.ts:37](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L37)
 
 ## Methods
 
@@ -229,7 +229,7 @@ ___
 
 #### Defined in
 
-[index.ts:64](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L64)
+[index.ts:64](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L64)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[index.ts:93](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L93)
+[index.ts:93](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L93)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[index.ts:131](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L131)
+[index.ts:131](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L131)
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 #### Defined in
 
-[index.ts:87](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L87)
+[index.ts:87](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L87)
 
 ___
 
@@ -297,4 +297,4 @@ ___
 
 #### Defined in
 
-[index.ts:102](https://github.com/khrome/character-scanner/blob/35a0b73/src/index.ts#L102)
+[index.ts:102](https://github.com/khrome/character-scanner/blob/1dbf895/src/index.ts#L102)
